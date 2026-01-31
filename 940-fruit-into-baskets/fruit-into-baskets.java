@@ -7,6 +7,7 @@ class Solution {
         for(int high=0;high<fruits.length;high++){
 
             freq.put(fruits[high],freq.getOrDefault(fruits[high],0)+1);
+        
 
         
         while(freq.size()>2){
