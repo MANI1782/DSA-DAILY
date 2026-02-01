@@ -16,7 +16,7 @@ class Solution {
                 }
                 low++;
             }
-           
+        
                 res=Math.max(res,high-low+1);
             }
             
