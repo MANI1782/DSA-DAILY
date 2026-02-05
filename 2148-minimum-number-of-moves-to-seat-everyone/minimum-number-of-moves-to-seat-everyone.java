@@ -1,20 +1,20 @@
 class Solution {
     public int minMovesToSeat(int[] seats, int[] students) {
-        // 1. Sort both to align smallest seats with smallest students
+       
         Arrays.sort(seats);
         Arrays.sort(students);
-        
-        int i = 0;
-        int j = 0;
-        int totalSum = 0; // This will store the total distance
-
-        // 2. Loop through and accumulate the distances
-        while (i < seats.length && j < students.length) {
-            // Add the absolute difference of the current pair to the total
-            totalSum += Math.abs(seats[i++] - students[j++]);
+        int i=0;
+        int j=0;
+         int sum=0;
+        int res=Integer.MAX_VALUE;
+        while(i<seats.length && j<students.length){
+     
+           
+            sum=sum+Math.abs(seats[i++]-students[j++]);
+         
+         
         }
+        return sum;
 
-        // 3. Return the final total accumulation
-        return totalSum;
     }
 }
