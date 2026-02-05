@@ -9,12 +9,13 @@ class Solution {
         int res=Integer.MAX_VALUE;
         while(i<seats.length && j<students.length){
      
-           
-            sum=sum+Math.abs(seats[i++]-students[j++]);
+            int ans=Math.abs(seats[i++]-students[j++]);
+            sum=sum+ans;
          
-         
+            
         }
-        return sum;
+        res=Math.min(res,sum);
+        return res;
 
     }
 }
