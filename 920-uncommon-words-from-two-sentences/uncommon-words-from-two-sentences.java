@@ -22,7 +22,7 @@ class Solution {
                 res.add(word);
             }
         }
-        return res.toArray(new String[0]);
+        return res.toArray(new String[res.size()]);
        
         }
     
