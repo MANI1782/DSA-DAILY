@@ -1,28 +1,17 @@
 class Solution {
     public boolean judgeSquareSum(int c) {
-        List<Long> ans=new ArrayList<>();
-        for(long i=0;i<=Math.sqrt(c);i++){
-            ans.add(i);
+        long start=0;
+        long end=(long)Math.sqrt(c);
+        while(start<=end)
+        {
+            long sum=start*start+end*end;
+            if(sum==c)
+            return true;
+            else if(sum<c)
+            start=start+1;
+            else
+            end=end-1;
         }
-        int left=0;
-        int right=ans.size()-1;
-        
-        
-        while(left<=right){
-                long a=ans.get(left);
-                long b=ans.get(right);
-                long sum=(a*a)+(b*b);
-            if(sum==c){
-                return true;
-            }
-            if(sum>c){
-                right--;
-            }else if(sum<c){
-                    left++;
-            }    
-        }
-        return false;
-
-        
+        return false;     
     }
 }
