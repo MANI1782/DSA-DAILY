@@ -7,13 +7,14 @@ class Solution {
             return nums[0];
         }
         for(int i=1;i<nums.length;i++){
-           int v1=nums[i];
-           int v2=maxans*nums[i];
-           int v3=minans*nums[i];
-           minans=Math.min(v1,Math.min(v2,v3));
-           maxans=Math.max(v1,Math.max(v2,v3));
-           ans=Math.max(ans,Math.max(minans,maxans));
+            int v1=nums[i];
+            int v2=minans*nums[i];
+            int v3=maxans*nums[i];
             
+
+            minans=Math.min(v1,Math.min(v2,v3));
+            maxans=Math.max(v1,Math.max(v2,v3));
+            ans=Math.max(ans,Math.max(minans,maxans));
         }
         return ans;
 
