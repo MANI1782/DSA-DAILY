@@ -8,6 +8,7 @@ class Solution {
        while(i<j){
 
           if (vowels.indexOf(arr[i]) == -1)
+          
 
           {
             i++;
