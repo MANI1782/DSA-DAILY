@@ -4,16 +4,12 @@ class Solution {
      ans.put(0,1);
      int prefix=0;
      int count=0;
-
      for(int i=0;i<nums.length;i++){
         prefix=prefix+nums[i];
-
         if(ans.containsKey(prefix-k)){
             count=count+ans.get(prefix-k);
         }
-        
-            ans.put(prefix,ans.getOrDefault(prefix,0)+1);
-        
+        ans.put(prefix,ans.getOrDefault(prefix,0)+1);
      }
      return count;
         
