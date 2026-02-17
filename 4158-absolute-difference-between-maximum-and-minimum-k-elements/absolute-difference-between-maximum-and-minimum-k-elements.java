@@ -6,9 +6,11 @@ class Solution {
         int maxSum=0;
         for(int i=0;i<k;i++){
             minSum=minSum+nums[i];
-            maxSum=maxSum+nums[nums.length-1-i];
         }
-        return Math.abs(maxSum-minSum);
-  
+        for(int i=nums.length-1;i>nums.length-1-k;i--){
+            maxSum=maxSum+nums[i];
+        }
+        int ans=Math.abs(minSum-maxSum);
+        return ans;
     }
 }
