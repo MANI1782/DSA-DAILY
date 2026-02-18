@@ -16,16 +16,15 @@ class Solution {
             ans2[i] = nums[i + n];
         }
         
-        // 4. Merge them one by one
-        int i = 0; // Pointer for ans1 and ans2
-        int k = 0; // Pointer for the final 'add' array
-        while (i < n) {
-            add[k] = ans1[i];   // Put X element
-            k++;                // Move to next spot in result
-            add[k] = ans2[i];   // Put Y element
-            k++;                // Move to next spot in result
-            i++;                // Move to next source element
-        }
+     int i=0;
+     int k=0;
+     while(i<n){
+        add[k]=ans1[i];
+        k++;
+        add[k]=ans2[i];
+        i++;
+        k++;
+     }
         
         return add;
     }
