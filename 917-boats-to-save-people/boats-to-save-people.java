@@ -8,10 +8,10 @@ class Solution {
             if(nums[i]+nums[j]>limit){
                 j--;
                 count++;
-            }else{
+            }else if(nums[i]+nums[j]<=limit){
+                count++;
                 i++;
                 j--;
-                count++;
             }
            
         }
