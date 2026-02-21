@@ -1,7 +1,7 @@
 class Solution {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
  
-        int low=0;
+        
         Map<Integer,Integer> freq=new HashMap<>();
         for(int high=0;high<nums.length;high++){
             if(freq.containsKey(nums[high])){
@@ -11,9 +11,8 @@ class Solution {
             }
 
             }
-            freq.put(nums[low],high);
-            low++;
-           
+            freq.put(nums[high],high);
+            
         
          }
     return false;
