@@ -20,10 +20,7 @@ class Solution {
                      {
                         right--;
                         };
-                        
-                
-                    
-                   
+                       left++;        
                     right--;
 
                 }else if(sum<0 ){
