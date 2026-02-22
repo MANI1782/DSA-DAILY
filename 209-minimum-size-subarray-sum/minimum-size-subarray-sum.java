@@ -7,11 +7,11 @@ class Solution {
             sum=sum+nums[high];
         
         while(sum>=target){
-         int length=high-low+1;
+        res=Math.min(res,(high-low)+1);
             sum=sum-nums[low];
             low++;
            
-            res=Math.min(res,length);
+            
         }
         }
         if(res==Integer.MAX_VALUE){
