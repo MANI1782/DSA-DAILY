@@ -3,9 +3,7 @@ class Solution {
         int minans=nums[0];
         int maxans=nums[0];
         int ans=nums[0];
-        if(nums.length==1){
-            return nums[0];
-        }
+      
         for(int i=1;i<nums.length;i++){
             int v1=nums[i];
             int v2=minans*nums[i];
