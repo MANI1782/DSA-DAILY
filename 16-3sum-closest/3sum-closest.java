@@ -13,6 +13,8 @@ class Solution {
                 int sum=nums[i]+nums[left]+nums[right];
                 if(Math.abs(target-sum)<Math.abs(target-closestSum)){
                     closestSum=sum;
+                }else if(Math.abs(target-sum)==Math.abs(target-closestSum)){
+                    closestSum=Math.max(sum,closestSum);
                 }
                 if(sum==target){
                     return sum;
