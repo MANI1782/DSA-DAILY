@@ -17,8 +17,8 @@ class Solution {
         }
         if(ans.containsKey(diff)){
              int index=ans.get(diff);
-            int length=i-index;
-            res=Math.max(res,length);
+            
+            res=Math.max(res,i-index);
            
         }else{
             ans.put(diff,i);
