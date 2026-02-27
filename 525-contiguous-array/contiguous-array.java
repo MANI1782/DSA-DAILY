@@ -10,7 +10,7 @@ class Solution {
         }else{
             one++;
         }
-        int diff=one-zero;
+        int diff=zero-one;
         if(diff==0){
             res=Math.max(res,i+1);
             continue;
