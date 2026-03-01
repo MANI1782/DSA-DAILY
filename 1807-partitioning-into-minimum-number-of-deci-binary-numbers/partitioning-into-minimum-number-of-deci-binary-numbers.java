@@ -7,6 +7,9 @@ class Solution {
             if(digit>max){
                 max=digit;
             }
+             if(max == 9) {
+                break;
+            }
         }
         return max;
 
