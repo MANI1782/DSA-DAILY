@@ -10,10 +10,10 @@ class Solution {
             }
         }
 
-        String answer="";
-        for(int k=0;k<ans.size();k++){
-            answer=answer+ans.get(k);
-        }    
-return answer;
+       StringBuilder answer = new StringBuilder();
+        for(char c : ans){
+            answer.append(c);
+        }
+        return answer.toString();
     }
 }
