@@ -8,13 +8,12 @@ class Solution {
             }else{
                 ans.push(left);
             }
-
         }
-        String c="";
-        for(int i=0;i<ans.size();i++){
-            c+=ans.get(i);
-        }
-        return c;
 
+        String answer="";
+        for(int k=0;k<ans.size();k++){
+            answer=answer+ans.get(k);
+        }    
+return answer;
     }
 }
