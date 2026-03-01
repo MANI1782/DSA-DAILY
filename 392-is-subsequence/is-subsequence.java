@@ -1,23 +1,24 @@
 class Solution {
     public boolean isSubsequence(String s, String t) {
-        if(s.length()==0){
+      int i=0;
+      int j=0;
+      // edge case ✅
+        if(s.length() == 0){
             return true;
         }
-       
-        int tSize=t.length();
-        int i=0;
-        for(int j=0;j<tSize;j++){
-            char right=t.charAt(j);
+
+      while(i<s.length() && j<t.length()){
             char left=s.charAt(i);
-
-
+            char right=t.charAt(j);
             if(left==right){
                 i++;
-            }  
-            if(i==s.length()){
-                return true;
-            } 
+            }
+            j++;
+        
+        if(i==s.length()){
+            return true;
         }
-        return false;
+      }
+      return false;
     }
 }
