@@ -17,7 +17,7 @@ class Solution {
                     stack.pop();
                     count--;
                 }
-                count=0;
+                
                 if(!stack.isEmpty()){
                     char top=stack.peek();
                     int j=stack.size()-1;
