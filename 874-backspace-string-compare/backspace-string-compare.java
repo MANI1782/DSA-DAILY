@@ -1,42 +1,38 @@
 class Solution {
     public boolean backspaceCompare(String s, String t) {
-       Stack<Character> st1=new Stack<>();
-        Stack<Character> st2=new Stack<>();
-        for(int i=0;i<s.length();i++){
-            if(s.charAt(i)!='#'){
-                st1.push(s.charAt(i));
-            }else if(s.charAt(i)=='#'){
-                if(!st1.isEmpty()){
-                    st1.pop();
-                }else{
-                    continue;
-                }
-            }
+     Stack<Character> stack1=new Stack<>();
+     Stack<Character> stack2=new Stack<>();
+     
+     for(int i=0;i<s.length();i++){
+        char left=s.charAt(i);
+        if(!stack1.isEmpty() && left=='#'){
+            stack1.pop();
+        }else if(left!='#'){
+        stack1.push(left);
+        }else{
+            continue;
         }
-         for(int i=0;i<t.length();i++){
-            if(t.charAt(i)!='#'){
-                st2.push(t.charAt(i));
-            }else if(t.charAt(i)=='#'){
-                if(!st2.isEmpty()){
-                    st2.pop();
-                }else{
-                    continue;
-                }
-            }
-        }
+     }
 
-        String s1="";
-        String s2="";
-
-        while(!st1.isEmpty()){
-            s1=s1+st1.pop();
-            
-        }
-        while(!st2.isEmpty()){
-            s2=s2+st2.pop();
-        }
-        return s1.equals(s2);
-
+    for(int i=0;i<t.length();i++){
+        char left=t.charAt(i);
+        if(!stack2.isEmpty() && left=='#'){
+            stack2.pop();
+        }else if(left!='#'){
+        stack2.push(left);
+    }else{
+        continue;
+    }
+    }
+    StringBuilder sb1=new StringBuilder();
+    StringBuilder sb2=new StringBuilder();
+    for(int i=0;i<stack1.size();i++){
+        sb1.append(stack1.get(i));
+    }
+    for(int i=0;i<stack2.size();i++){
+        sb2.append(stack2.get(i));
+    }
+    return sb1.toString().equals(sb2.toString());
         
         
     }
