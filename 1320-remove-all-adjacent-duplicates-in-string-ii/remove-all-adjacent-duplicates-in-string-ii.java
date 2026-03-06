@@ -1,39 +1,30 @@
 class Solution {
     public String removeDuplicates(String s, int k) {
-        Stack<Character> stack=new Stack<>();
-        int count=0;
-        for(int i=0;i<s.length();i++){
-            char left=s.charAt(i);
-            
-            if(!stack.isEmpty() && stack.peek()==left){
-                count++;
-                
-            }else{    
-                count=1;
-            }
-            stack.push(left);
-            if(count==k){
-                while(count>0){
-                    stack.pop();
-                    count--;
-                }
-                count=0;
-                if(!stack.isEmpty()){
-                    char top=stack.peek();
-                    int j=stack.size()-1;
-                    while(j>=0 && stack.get(j)==top){
-                        count++;
-                        j--;
-                    }
-                }
+        Stack<int[]> stack = new Stack<>();
+        // int[] = [character, count]
+
+        for(int i = 0; i < s.length(); i++) {
+            char left = s.charAt(i);
+
+            if(!stack.isEmpty() && stack.peek()[0] == left) {
+                stack.peek()[1]++; // ✅ increment count
+            } else {
+                stack.push(new int[]{left, 1}); // ✅ push new char with count 1
             }
 
+            if(stack.peek()[1] == k) {
+                stack.pop(); // ✅ just pop once! removes [char, k]
+            }
         }
-        StringBuilder sb=new StringBuilder();
-        for(int i=0;i<stack.size();i++){
-            sb.append(stack.get(i));
+
+        // Build result
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0; i < stack.size(); i++) {
+            int[] pair = stack.get(i);
+            for(int j = 0; j < pair[1]; j++) {
+                sb.append((char) pair[0]); // ✅ append char pair[1] times
+            }
         }
         return sb.toString();
-        
     }
 }
