@@ -14,7 +14,7 @@ class Solution {
             if(val%2==0){
                 count=count+val;
             }else{
-                count=count+(val-1);
+                count=count-1+val;
                 oddcount=true;
             }
         }
