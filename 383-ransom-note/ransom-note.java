@@ -1,7 +1,9 @@
 class Solution {
     public boolean canConstruct(String ransomNote, String magazine) {
         Map<Character,Integer> map=new HashMap<>();
-        Map<Character , Integer> note=new HashMap<>();
+        
+
+        
         for(int i=0;i<magazine.length();i++){
             char left=magazine.charAt(i);
             map.put(left,map.getOrDefault(left,0)+1);
