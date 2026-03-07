@@ -3,7 +3,7 @@ class Solution {
         List<Integer> ans=new ArrayList<>();
         int n=nums.length;
         Stack<Integer> stack=new Stack<>();
-        for(int i=nums.length*2;i>=0;i--){
+        for(int i=nums.length*2-1;i>=0;i--){
             while(!stack.isEmpty() && stack.peek() <=nums[i%n]){
                 stack.pop();
             }
