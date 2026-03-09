@@ -24,8 +24,8 @@ class Solution {
                 
                 low++;
             }
-            if(map.size()==k){
-                max=Math.max(max,sum);
+            if (high - low + 1 == k && map.size() == k) {
+                max = Math.max(max, sum);
             }
             
         }
