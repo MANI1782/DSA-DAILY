@@ -16,7 +16,7 @@ class Solution {
                 }
                 low++;
             }
-              if(map.size()==3){
+              if(map.size()==3 && high-low+1==3){
                     count++;
                 }
         }
