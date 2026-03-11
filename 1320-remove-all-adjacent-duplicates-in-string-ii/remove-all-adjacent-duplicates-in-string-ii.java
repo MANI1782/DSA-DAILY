@@ -1,6 +1,8 @@
 class Solution {
     public String removeDuplicates(String s, int k) {
         Stack<int[]> stack=new Stack<>();
+        //char 0==> d[2];
+        //char 1==> repeated numbers 
         for(int i=0;i<s.length();i++){
             char left=s.charAt(i);
             if(!stack.isEmpty() && left==stack.peek()[0]){
