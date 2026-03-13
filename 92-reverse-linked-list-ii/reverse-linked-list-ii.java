@@ -16,30 +16,35 @@ class Solution {
         }
         ListNode temp=head;
         ListNode before=null;
-        int pos=1;
-        while(pos<left){
+        int count=1;
+        while(count<left){
             before=temp;
             temp=temp.next;
-            pos++;
+            count++;
         }
         ListNode current=temp;
         ListNode prev=null;
-        int count=right-left+1;
-        while(count!=0){
+        int times=right-left+1;
+        while(times!=0){
             ListNode next=current.next;
+            
             current.next=prev;
             prev=current;
             current=next;
-            count--;
+            times--;
         }
         if(before!=null){
             before.next=prev;
-        }else{
+
+        }
+        
+        else{
             head=prev;
         }
         temp.next=current;
-        return head;
+        
 
+return head;
       
        
     }
