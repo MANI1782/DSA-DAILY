@@ -10,32 +10,33 @@
  */
 class Solution {
     public ListNode swapPairs(ListNode head) {
-        ListNode left=head;
-        ListNode right=head;
-        ListNode res=null;
-        int size=2;
-        ListNode prevleft=null;
-        while(true){
+        ListNode left = head;
+        ListNode right = head;
+        ListNode res = null;
+        ListNode prevleft = null;
+        int size = 2;
+        while (true) {
             right = left;
-            for(int i=0;i<size-1;i++){
-                if(right==null){
+            for (int i = 0; i < size - 1; i++) {
+                if (right == null) {
                     break;
                 }
-                right=right.next;
+                right = right.next;
+
             }
-            if(right!=null){
-                ListNode nextleft=right.next;
-                reverse(left,size);
-                if(prevleft!=null){
-                    prevleft.next=right;
-                    
+
+            if (right != null) {
+                ListNode nextleft = right.next;
+                rev(left, size);
+                if (prevleft != null) {
+                    prevleft.next = right;
                 }
-                prevleft=left;
-                if(res==null){
-                    res=right;
+                prevleft = left;
+                if (res == null) {
+                    res = right;
                 }
-                left.next = nextleft;
-                left=nextleft;
+                left = nextleft;
+
             }else{
                 if(prevleft!=null){
                     prevleft.next=left;
@@ -47,18 +48,19 @@ class Solution {
             }
         }
         return res;
+
     }
-    void reverse(ListNode head,int size){
-        ListNode curr=head;
-        ListNode prev=null;
-        while(size!=0){
-            ListNode next=curr.next;
-            curr.next=prev;
-            prev=curr;
-            curr=next;
-            size--;
-            
+
+    void rev(ListNode head, int times) {
+        ListNode curr = head;
+        ListNode prev = null;
+        while (times != 0) {
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+            times--;
         }
-        
     }
+
 }
