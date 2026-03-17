@@ -15,11 +15,7 @@ class Solution {
             right=mid1-1;
         }
         }
-          return -1;
-    
-
-
-       
+          return -1;    
 
     } 
        public int searchMin(int[] nums){
