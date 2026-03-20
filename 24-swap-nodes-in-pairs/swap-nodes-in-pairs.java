@@ -10,57 +10,16 @@
  */
 class Solution {
     public ListNode swapPairs(ListNode head) {
-        ListNode left = head;
-        ListNode right = head;
-        ListNode res = null;
-        ListNode prevleft = null;
-        int size = 2;
-        while (true) {
-            right = left;
-            for (int i = 0; i < size - 1; i++) {
-                if (right == null) {
-                    break;
-                }
-                right = right.next;
-
-            }
-
-            if (right != null) {
-                ListNode nextleft = right.next;
-                rev(left, size);
-                if (prevleft != null) {
-                    prevleft.next = right;
-                }
-                prevleft = left;
-                if (res == null) {
-                    res = right;
-                }
-                left = nextleft;
-
-            }else{
-                if(prevleft!=null){
-                    prevleft.next=left;
-                }
-                if(res==null){
-                    res=left;
-                }
-                break;
-            }
+        ListNode temp = head;
+        // Traverse the list in pairs
+        while (temp != null && temp.next != null) {
+            // Swap values of current node and the next
+            int t = temp.val;
+            temp.val = temp.next.val;
+            temp.next.val = t;
+            // Move to the next pair
+            temp = temp.next.next;
         }
-        return res;
-
+        return head;
     }
-
-    void rev(ListNode head, int times) {
-        ListNode curr = head;
-        ListNode prev = null;
-        while (times != 0) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-            times--;
-        }
-    }
-
 }
