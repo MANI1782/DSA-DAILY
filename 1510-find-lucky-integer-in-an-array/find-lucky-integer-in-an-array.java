@@ -8,8 +8,8 @@ class Solution {
         }
         for(int i=0;i<arr.length;i++){
             if(map.get(arr[i])==arr[i]){
-                
-                res=Math.max(arr[i],res);
+                count=arr[i];
+                res=Math.max(count,res);
             }
            
         }
