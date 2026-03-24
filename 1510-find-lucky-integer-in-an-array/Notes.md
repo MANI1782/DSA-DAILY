@@ -1,1 +1,1 @@
-<h2>find-lucky-integer-in-an-array Notes</h2><hr>[ Time taken: 17m 24s ]
+<h2>find-lucky-integer-in-an-array Notes</h2><hr>[ Time taken: 11hrs 39m 47s ]
