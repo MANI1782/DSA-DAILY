@@ -4,14 +4,17 @@ class Solution {
         int alice = 0;
 
         for (int i = 1; i < colors.length()-1; i++) {
-            if (colors.charAt(i - 1) == 'A' && colors.charAt(i + 1) == 'A' && colors.   charAt(i) == 'A') {
-                alice++;
+            if (colors.charAt(i - 1) ==colors.charAt(i) && 
+            colors.charAt(i) ==colors.charAt(i+1)) {
+                
+                if(colors.charAt(i)=='A'){
+                    alice++;
+                }else{
+                    bob++;
+                }
 
             }
-            else if (colors.charAt(i - 1) == 'B' && colors.charAt(i + 1) == 'B' && colors.   charAt(i) == 'B') {
-                bob++;
-
-            }
+           
 
         }
         return alice>bob;
