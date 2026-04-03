@@ -5,22 +5,24 @@ class Solution {
         int j=s.length()-1;
         int icount=0;
         int jcount=0;
-        String str=s.toLowerCase();
+        String vowels="AEIOUaeiou";
 
 
         while(i<j){
-         char left=str.charAt(i);
-         char right=str.charAt(j);
+         char left=s.charAt(i);
+         char right=s.charAt(j);
 
-         if(left=='a'|| left=='e' || left=='i'||  left=='o' || left=='u'){
-            icount+=1;
+         if(vowels.indexOf(left)!=-1){
+            icount++;
          }
          i++;
-
-        if(right=='a'|| right=='e' || right=='i'||  right=='o' || right=='u'){
-            jcount+=1;
+         if(vowels.indexOf(right)!=-1){
+            jcount++;
          }
          j--;
+
+       
+        
 
         }
         return jcount==icount;
