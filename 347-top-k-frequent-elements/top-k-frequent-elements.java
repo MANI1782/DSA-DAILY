@@ -48,7 +48,7 @@ class Pair{
     int second;
 
     Pair(int f,int s){
-        first=f;
-        second=s;
+        this.first=f;
+        this.second=s;
     }
 }
