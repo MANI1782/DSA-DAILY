@@ -7,10 +7,10 @@ class Solution {
         for(int i=0;i<nums.length;i++){
         if(nums[i]==0){
             zero++;
-        }else{
+        }if(nums[i]==1){
             one++;
         }
-        int diff=zero-one;
+        int diff=one-zero;
         if(diff==0){
             res=Math.max(res,i+1);
             continue;
