@@ -9,7 +9,7 @@ class Solution {
         
         for(int i=0;i<nums.length;i++){
             int num=nums[i];
-            while(num>0){
+            while(num!=0){
                 int last=num%10;
                 digitsum+=last;
                 num=num/10;
