@@ -3,23 +3,24 @@ import java.util.HashMap;
 
 class Solution {
     public int characterReplacement(String s, int k) {
-        HashMap<Character, Integer> freqs = new HashMap<>();
-        int res = 0, i = 0, maxFreq = 0;
+      HashMap<Character,Integer> map=new HashMap<>();
+      int maxfreq=0;
+      int low=0;
+      int res=0;
 
-        for (int j = 0; j < s.length(); j++) {
-            char c = s.charAt(j);
-            freqs.put(c, freqs.getOrDefault(c, 0) + 1);
-            maxFreq = Math.max(maxFreq, freqs.get(c));
+    for(int high=0;high<s.length();high++){
+        char ch=s.charAt(high);
+        map.put(ch,map.getOrDefault(ch,0)+1);
+        maxfreq=Math.max(maxfreq,map.get(ch));
 
-            while ((j - i + 1) - maxFreq > k) {
-                char left = s.charAt(i);
-                freqs.put(left, freqs.get(left) - 1);
-                i++;
-            }
-
-            res = Math.max(res, j - i + 1);
+        while(high-low+1 - maxfreq > k ){
+            char left=s.charAt(low);
+            map.put(left,map.get(left)-1);
+            low++;
         }
+        res=Math.max(res,high-low+1);
+    }
+    return res;
 
-        return res;
     }
 }
