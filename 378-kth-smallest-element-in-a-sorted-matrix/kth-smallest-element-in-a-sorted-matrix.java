@@ -15,8 +15,8 @@ class Solution {
        while(times>1){
         Node node=pq.poll();
         int col=node.col;
-        if(col+1<m){
-            pq.add(new Node(matrix[node.row][col+1], node.row ,col+1));
+        if(col<m-1){
+            pq.add(new Node(matrix[node.row][col+1], node.row,col+1));
 
         }
                
