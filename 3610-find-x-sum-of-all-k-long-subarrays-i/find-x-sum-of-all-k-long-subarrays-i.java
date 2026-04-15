@@ -32,8 +32,6 @@ class Solution {
                 Pair pair=new Pair(freq,val);
                 pq.add(pair);
             }
-
-               
                 int times=x;
                 int sum=0;
                 while(times>0 && !pq.isEmpty()){
@@ -42,21 +40,9 @@ class Solution {
                     times--;
                 }
                 res[idx++]=sum;
-
-            
-                        
-         
-
             }
-
-
         }
-        return res;
-
-
-
-
-        
+        return res;   
     }
 }
 class Pair{
