@@ -12,7 +12,7 @@ class Solution {
                 low++;
             }
             if(high-low+1==k){
-                double ans=(double)avg/k;
+                int ans=avg/k;
 
                 if(ans>=threshold){
                     count++;
