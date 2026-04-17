@@ -5,8 +5,8 @@ class Solution {
        int res=Integer.MAX_VALUE;
       
       int i=0;
-      while(i<nums.length){
-        int num=nums[i];
+      while(i<nums.length){  //21- 0  res  1-0// 1
+        int num=nums[i]; 
         int r=rev(num);
         if(map.containsKey(num)){
             res=Math.min(res,Math.abs(i-map.get(num)));
@@ -18,7 +18,7 @@ class Solution {
        
         
     }
-    int rev(int n){
+    int rev(int n){ 
         while(n%10==0 && n>0){
             n=n/10;
         }
