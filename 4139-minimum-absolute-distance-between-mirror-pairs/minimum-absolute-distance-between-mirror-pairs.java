@@ -6,6 +6,9 @@ class Solution {
       
       int i=0;
       while(i<nums.length){  //21- 0  res  1-0// 1
+
+
+                            //12-0 
         int num=nums[i]; 
         int r=rev(num);
         if(map.containsKey(num)){
