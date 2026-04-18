@@ -20,12 +20,13 @@
                 i=i+2;
                 j=j+2;
             }
-            if(i<nums.length){
+            while(i<nums.length){
                 int even=nums[i];
                 while(!prime(even)){
                     count++;
                     even++;
                 }
+                i++;
             }
             return count;
             
