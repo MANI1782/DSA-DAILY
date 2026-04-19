@@ -12,7 +12,7 @@ class Solution {
                 j++;
                 
             }
-            else if(nums1[i]>nums2[j]){
+            else {
                 i++;
             }
          }
