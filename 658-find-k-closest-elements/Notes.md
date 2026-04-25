@@ -1,1 +1,1 @@
-<h2>find-k-closest-elements Notes</h2><hr>[ Time taken: 2d 12hrs 33m 9s ]
+<h2>find-k-closest-elements Notes</h2><hr>[ Time taken: 1d 8hrs 25m 17s ]
