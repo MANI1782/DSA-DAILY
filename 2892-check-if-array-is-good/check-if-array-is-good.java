@@ -13,12 +13,12 @@ class Solution {
         if(nums.length!=max+1){
             return false;
         }
-        int i=0;
-        
-        while(i<nums.length-2){
-            if(nums[i]==i+1){
+        int i=1;
+        int idx=0;
+        while(idx<nums.length-2){
+            if(nums[idx]==i){
                i++;
-             
+               idx++;
             }else{
                 return false;   ////1 1 2 
             }
