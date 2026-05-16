@@ -6,6 +6,7 @@ class Solution {
         for(int i=0;i<nums.length;i++){
             ans.put(nums[i],i);
         }
+        
         for(int i=0;i<nums.length;i++){
             int compliment=target-nums[i];
             if(ans.containsKey(compliment) && i!=ans.get(compliment)){
