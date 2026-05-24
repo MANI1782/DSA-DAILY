@@ -1,7 +1,7 @@
 class Solution {
     public int passwordStrength(String password) {
         int count=0;
-        Set<Character> set=new HashSet();
+        Set<Character> set=new HashSet<>();
 
         for(int i=0;i<password.length();i++){
             char ch=password.charAt(i);
