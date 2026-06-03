@@ -9,16 +9,27 @@ class Solution {
         freq.put('C',100);
         freq.put('D',500);
         freq.put('M',1000);
-        int res=0;
-        for(int i=0;i<s.length();i++){
-            if(i < s.length() - 1 && freq.get(s.charAt(i))<freq.get(s.charAt(i+1))){
-                res=res-freq.get(s.charAt(i));
-            }else{
-                    res=res+freq.get(s.charAt(i));
-            }
-
+        int res = 0;
+        int prev=0;
+        int i = s.length()-1;
+        while(i>=0){
+            int curr = freq.get(s.charAt(i));
+           if(curr>prev){
+            res=res+curr;
+        
+           }else if(curr<prev){
+            res=res-curr;
+    
+           }
+           else if(curr == prev){
+            res=res+curr;
+           }
+           prev=curr;
+           i--;
             
         }
-        return res;   
+        return res;
+
+     
     }
 }
