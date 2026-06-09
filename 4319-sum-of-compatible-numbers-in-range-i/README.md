@@ -3,8 +3,8 @@
 <p>A <strong>positive</strong> integer <code>x</code> is called <strong>compatible</strong> if it satisfies both of the following conditions:</p>
 
 <ul>
-	<li><code>abs(n - x) &lt;= k</code></li>
-	<li><code>(n &amp; x) == 0</code></li>
+    <li><code>abs(n - x) &lt;= k</code></li>
+    <li><code>(n &amp; x) == 0</code></li>
 </ul>
 
 <p>Return the sum of all <strong>compatible</strong> integers <code>x</code>.</p>
@@ -12,10 +12,9 @@
 <p><strong>Note</strong>:</p>
 
 <ul>
-	<li>Here, <code>&amp;</code> denotes the <strong>bitwise AND</strong> operator.</li>
-	<li>The <strong>absolute</strong> difference between integers <code>i</code> and <code>j</code> is defined as <code>abs(i - j)</code>.</li>
+    <li>Here, <code>&amp;</code> denotes the <strong>bitwise AND</strong> operator.</li>
+    <li>The <strong>absolute</strong> difference between integers <code>i</code> and <code>j</code> is defined as <code>abs(i - j)</code>.</li>
 </ul>
-
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
 
