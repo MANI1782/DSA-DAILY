@@ -10,7 +10,7 @@ class Solution {
             double res= 360-dig;
             return Math.abs(res);
         }
-        return Math.abs(dig);      
-    }
+        return Math.abs(dig);                    
+    }                                                                                                                                                                                                                                                          
     
 }
