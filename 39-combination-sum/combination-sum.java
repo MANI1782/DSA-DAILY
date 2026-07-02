@@ -20,8 +20,9 @@ class Solution {
             sum=sum+arr[idx];
 
             combination(arr,idx,sum,dairy,res,target);
-            dairy.remove(dairy.size()-1);
             sum=sum-arr[idx];
+            dairy.remove(dairy.size()-1);
+            
         }
     }
 }
