@@ -8,7 +8,7 @@ class Solution {
         
     }
 
-    void track(int nums[],int idx,List<Integer> curr,List<List<Integer>> res,int sum,int target){             // 1 1 
+    void track(int nums[],int idx,List<Integer> curr,List<List<Integer>> res,int sum,int target){  
         
             if(sum==target){
                 res.add(new ArrayList<>(curr));
