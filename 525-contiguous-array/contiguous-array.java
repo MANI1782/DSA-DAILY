@@ -3,27 +3,26 @@ class Solution {
         int zero=0;
         int one=0;
         int res=0;
-        Map<Integer,Integer> ans=new HashMap<>();
+        Map<Integer,Integer> map=new HashMap<>();
         for(int i=0;i<nums.length;i++){
-        if(nums[i]==0){
-            zero++;
-        }if(nums[i]==1){
-            one++;
+            if(nums[i]==1){
+                one++;
+            }else{
+                zero++;
+            }
+
+            int diff=one-zero;
+            if(diff==0){
+                res=Math.max(res,i+1);
+                continue;
+            }
+            if(map.containsKey(diff)){
+                int idx=map.get(diff);
+                res=Math.max(res,i-idx);
+            }else{
+                map.put(diff,i);
+            }
         }
-        int diff=one-zero;
-        if(diff==0){
-            res=Math.max(res,i+1);
-            continue;
-        }
-        if(ans.containsKey(diff)){
-            int index=ans.get(diff);
-            int length=i-index;
-            res=Math.max(res,length);
-           
-        }else{
-            ans.put(diff,i);
-        }
-        } 
-        return res; 
+        return res;
     }
 }
