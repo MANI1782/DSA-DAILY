@@ -13,8 +13,8 @@ class Solution {
             
             String word=words[i].toLowerCase();
             boolean on=false;
-                boolean tw=false;
-                boolean th=false;
+            boolean tw=false;
+            boolean th=false;
             for(int j=0;j<word.length();j++){
                 
                 char ch=word.charAt(j);
