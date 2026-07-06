@@ -7,15 +7,16 @@ class Solution {
     }
 
     void subset(int arr[],int idx,List<List<Integer>> list,List<Integer> curr){
+    
+        list.add(new ArrayList<>(curr));
         
-            list.add(new ArrayList<>(curr));
-         
-
         for(int i=idx;i<arr.length;i++){
-            curr.add(arr[i]);
-            subset(arr,i+1,list,curr);
-            curr.remove(curr.size()-1);
+
+        curr.add(arr[i]);
+        subset(arr,i+1,list,curr);
+        curr.remove(curr.size()-1);
         }
+        
 
         
         
