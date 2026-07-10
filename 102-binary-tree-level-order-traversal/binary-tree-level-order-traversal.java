@@ -19,24 +19,27 @@ class Solution {
         Queue<TreeNode> q=new LinkedList<>();
         if (root == null) return list;
         q.offer(root);
+      
+        
         while(!q.isEmpty()){
             int levelsize=q.size();
             List<Integer> temp=new ArrayList<>();
             while(levelsize>0){
                 TreeNode t=q.poll();
-                
                 temp.add(t.val);
-
                 if(t.left!=null){
                     q.offer(t.left);
                 }
-                if(t.right!=null){
+                if(t.right!=null ){
                     q.offer(t.right);
                 }
-                levelsize--; 
-                
+                levelsize--;
+                   
             }
+             
+            
             list.add(temp);
+       
 
         }
         
