@@ -8,9 +8,7 @@ class Solution {
            
             int find=gcd(max,num);
             res[idx]=find;
-            idx++;
-            
-            
+            idx++;          
         }
         Arrays.sort(res);
         int i=0;
@@ -23,9 +21,7 @@ class Solution {
             j--;
         }
         return sum;
-        
-       
-        
+   
     }
     int gcd(int a, int b){
         if (b == 0) return a;
