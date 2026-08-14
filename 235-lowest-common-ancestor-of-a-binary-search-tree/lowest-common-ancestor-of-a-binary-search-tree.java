@@ -7,28 +7,27 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
- 
+
 class Solution {
-    TreeNode ans=null;
+   
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        check(root,p,q);
-        return ans;
+        return check(root,p,q);
         
     }
-    int check(TreeNode root,TreeNode p,TreeNode q){
+    TreeNode check(TreeNode root,TreeNode p,TreeNode q){
+
         if(root==null){
-            return 0;
+            return null;
         }
-        int sum=0;
-        int left=check(root.left,p,q);
-        int right=check(root.right,p,q);
-        if(root==p || root==q){
-            sum=1;
+        if(root.val<p.val && root.val<q.val){
+            return check(root.right,p,q);
+        } if(root.val>p.val && root.val>q.val){
+            return check(root.left,p,q);
+        }else if(root.val>=p.val && root.val<=q.val){
+                return root;
         }
-        int total=left+right+sum;
-        if(total==2 && ans==null){
-            ans=root;
-        }
-        return total;
+        return root;
+
     }
+
 }
