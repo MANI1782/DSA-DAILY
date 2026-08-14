@@ -11,24 +11,25 @@
 class Solution {
     TreeNode ans=null;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        check(root,p,q);
-        return ans;
-        
+      check(root,p,q);
+      return ans;
+
     }
-    int check(TreeNode root,TreeNode p,TreeNode q){
+    int check(TreeNode root,TreeNode p, TreeNode q){
         if(root==null){
             return 0;
         }
-        int sum=0;
         int left=check(root.left,p,q);
         int right=check(root.right,p,q);
+        int self=0;
         if(root==p || root==q){
-            sum=1;
+            self=1;
         }
-        int total=left+right+sum;
+        int total=left+right+self;
         if(total==2 && ans==null){
             ans=root;
         }
         return total;
+
     }
 }
