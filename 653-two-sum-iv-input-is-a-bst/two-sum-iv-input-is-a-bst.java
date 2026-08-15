@@ -30,9 +30,12 @@ class Solution {
       
        if(map.containsKey(k-root.val)){
             found=true;
+            return;
        }
         map.put(root.val,map.getOrDefault(root.val,0)+1);
-       addElements(map,root.left,k)  ;
+       if(!found){
+        addElements(map,root.left,k)  ;
+       }
        addElements(map,root.right,k) ;
 
     }
