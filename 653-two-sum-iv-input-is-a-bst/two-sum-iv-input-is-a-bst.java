@@ -14,34 +14,26 @@
  * }
  */
 class Solution {
+    boolean found=false;
     public boolean findTarget(TreeNode root, int k) {
-        List<Integer> list=new ArrayList<>(); // 1 2 3 4 5 6 7
-        addElements(list,root);
-        Collections.sort(list);
-        int i=0;
-        int j=list.size()-1;
-        while(i<j){
-            int sum=list.get(i)+list.get(j);
-            if(k==sum){
-                return true;
-            }else if(sum<k){
-                i++;
-            }else{
-                j--;
-            }
-        }
-        return false;
+        Map<Integer,Integer> map=new HashMap<>();
+        addElements(map,root,k);
+        return found;
 
         
     }
-    void addElements(List<Integer> list,TreeNode root){
-        if(root==null){
-            return;
-        }
-        list.add(root.val);
-        addElements(list,root.left);
-        addElements(list,root.right);
+    void addElements(Map<Integer,Integer> map,TreeNode root,int k){
+       if(root==null ){
         return;
+       }
+       
+      
+       if(map.containsKey(k-root.val)){
+            found=true;
+       }
+        map.put(root.val,map.getOrDefault(root.val,0)+1);
+       addElements(map,root.left,k)  ;
+       addElements(map,root.right,k) ;
 
     }
 }
