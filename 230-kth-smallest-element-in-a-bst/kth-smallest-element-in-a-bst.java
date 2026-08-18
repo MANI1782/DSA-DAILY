@@ -1,38 +1,35 @@
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public int kthSmallest(TreeNode root, int k) {
-        PriorityQueue<Integer> pq=new PriorityQueue<>();
-        check(pq,root,k);
-        for(int i=0;i<k-1;i++){
-            pq.poll();
+    /**
+    * Definition for a binary tree node.
+    * public class TreeNode {
+    *     int val;
+    *     TreeNode left;
+    *     TreeNode right;
+    *     TreeNode() {}
+    *     TreeNode(int val) { this.val = val; }
+    *     TreeNode(int val, TreeNode left, TreeNode right) {
+    *         this.val = val;
+    *         this.left = left;
+    *         this.right = right;
+    *     }
+    * }
+    */
+    class Solution {
+        public int kthSmallest(TreeNode root, int k) {
+            List<Integer> list=new ArrayList<>();
+            check(list,root,k);
+            return list.get(k-1);
+            
         }
-        return pq.peek();
-        
-    }
-    void check(PriorityQueue<Integer> pq,TreeNode root,int k){
+        void check(List<Integer> list,TreeNode root,int k){
 
-        if(root==null){
-            return ;
+            if(root==null){
+                return ;
+            }
+            check(list,root.left,k);
+            list.add(root.val);
+            check(list,root.right,k);
+            return;
+            
+
         }
-        pq.add(root.val);
-        check(pq,root.left,k);
-        check(pq,root.right,k);
-        return;
-        
-
     }
-}
