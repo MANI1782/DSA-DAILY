@@ -31,10 +31,10 @@ class Solution {
             min=count;
             res=Math.min(res,min);
         }
-        count=count+1;
-        check(root.left,count);
+        
+        check(root.left,count+1);
     
-        check(root.right,count);
+        check(root.right,count+1);
         
     }
 }
