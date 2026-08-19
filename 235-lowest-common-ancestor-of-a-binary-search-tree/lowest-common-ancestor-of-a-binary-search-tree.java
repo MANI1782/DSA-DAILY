@@ -9,26 +9,27 @@
  */
 
 class Solution {
-
+    TreeNode found=null;
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        return check(root,p,q);
+        check(root,p,q);
+        return found;
 
     }        
-     TreeNode check(TreeNode root,TreeNode p,TreeNode q){
+     void check(TreeNode root,TreeNode p,TreeNode q){
         if(root==null){
-            return null;
+            return ;
 
         }
         
 
-        if(root.val>p.val && root.val<q.val){
-            return root;
-        }else if(root.val>p.val && root.val>q.val){
-            return check(root.left,p,q);
+        if(root.val>p.val && root.val>q.val){
+            check(root.left,p,q);
         }else if(root.val<p.val && root.val<q.val){
-            return check(root.right,p,q);
+            check(root.right,p,q);
+        }else{
+            found=root;
         }
-        return root;
+        return ;
 
     }
        
