@@ -14,22 +14,22 @@
  * }
  */
 class Solution {
-    int sum1=0;
+    int sum=0;
     public int sumOfLeftLeaves(TreeNode root) {
         
-        check(root,0);
-        return sum1;
+        check(root);
+        return sum;
         
     }
-    void check(TreeNode root,int sum){
+    void check(TreeNode root){
         if(root==null){
             return;
         }
         if(root.left!=null && root.left.left==null && root.left.right==null){
-            sum1=sum1+root.left.val;
+            sum=sum+root.left.val;
         }
-        check(root.left,sum);
-        check(root.right,sum);
+        check(root.left);
+        check(root.right);
         
     }
 }
