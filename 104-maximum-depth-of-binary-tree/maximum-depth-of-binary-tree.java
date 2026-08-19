@@ -14,25 +14,21 @@
  * }
  */
 class Solution {
-    int res=Integer.MIN_VALUE;
-    int max=Integer.MIN_VALUE;
+    
     public int maxDepth(TreeNode root) {
-        check(root,0);
-        if(max==Integer.MIN_VALUE) return 0;
-        return max;
+       return check(root,0);
+        
         
     }
-    void check(TreeNode root,int count){
+    int check(TreeNode root,int count){
         if(root==null){
-            return;
+            return count;
         }
-        count=count+1;
-        if(root.left==null && root.right==null){
-            res=count;
-            max=Math.max(max,res);
-        }
-        check(root.left,count);
-        check(root.right,count);
+        int left=check(root.left,count+1);
+        int right=check(root.right,count+1);
+        return Math.max(left,right);
+        
+        
 
     }
 }
