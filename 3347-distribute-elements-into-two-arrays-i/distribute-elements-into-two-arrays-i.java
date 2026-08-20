@@ -16,16 +16,14 @@ class Solution {
                 j++;
             }
         }
-        int[] res=new int[list1.size()+list2.size()];
+        list1.addAll(list2);
+        int[] res=new int[list1.size()];
         int m=0;
         for(int b=0;b<list1.size();b++){
             res[m]=list1.get(b);
             m++;
         }
-        for(int a=0;a<list2.size();a++){
-            res[m]=list2.get(a);
-            m++;
-        }
+        
         return res;
 
 
