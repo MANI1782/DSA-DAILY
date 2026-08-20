@@ -14,24 +14,33 @@
  * }
  */
 class Solution {
+    TreeNode prev=null;
+    boolean found=true;
     public boolean isValidBST(TreeNode root) {
-        List<Integer> list=new ArrayList<>();
-        check(root,list);
-        for(int i=0;i<list.size()-1;i++){
-            if(list.get(i)>=list.get(i+1)){
-                return false;
-            }
-        }
-        return true;
+      
+        check(root);
+        return found;
         
     }
-    void check(TreeNode root,List<Integer> list){
+    void check(TreeNode root){
         if(root==null){
             return;
-
         }
-        check(root.left,list);
-        list.add(root.val);
-        check(root.right,list);
+        check(root.left);
+        if(prev==null){
+                prev=root;
+        }else{
+            if(root.val<=prev.val){
+                found=false;
+               
+            }else{
+                 prev=root;
+            }
+        }
+        check(root.right);
+
+    
+
     }
+
 }
