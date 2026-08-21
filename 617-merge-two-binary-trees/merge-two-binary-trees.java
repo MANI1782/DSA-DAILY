@@ -22,13 +22,12 @@ class Solution {
         if(r1==null && r2==null){
             return null;
         }
-        int val1=(r1!=null)?r1.val:0;
-        int val2=(r2!=null)?r2.val:0;
-        int sum=val1+val2;
-        
-        TreeNode root=new TreeNode(sum);
-        root.left=check(r1!=null? r1.left:null,r2!=null?r2.left:null);
-        root.right=check(r1!=null? r1.right:null,r2!=null?r2.right:null);
+        if(r1==null && r2!=null) return r2;
+        if(r1!=null && r2==null) return r1;
+
+        TreeNode root=new TreeNode(r1.val+r2.val);
+        root.left=check(r1.left,r2.left);
+        root.right=check(r1.right,r2.right);
 
         return root;
 
