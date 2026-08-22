@@ -9,7 +9,7 @@ class Solution {
         pq.add(a);
         pq.add(b);
         pq.add(c);
-        while(pq.size()>=2){
+        while(pq.size()>1){
             
             int ans1=pq.poll();
             int ans2=pq.poll();
