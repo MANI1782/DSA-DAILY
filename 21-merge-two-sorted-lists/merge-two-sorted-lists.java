@@ -18,14 +18,15 @@ class Solution {
         while(list1!=null && list2!=null){
             if(list1.val>=list2.val){
                 node.next=list2;
+                 node=node.next;
                 
                 list2=list2.next;
             }else if(list2.val>=list1.val){
                 node.next=list1;
-                
+                 node=node.next;
                 list1=list1.next;
             }
-            node=node.next;
+           
         }
         while(list1!=null){
             node.next=list1;
